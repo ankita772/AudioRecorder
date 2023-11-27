@@ -83,26 +83,14 @@ const Recorder = () => {
     <View style={styles.container}>
       <TouchableOpacity
         onPress={recording ? stopRecording : startRecording}
-        style={{
-          padding: 40,
-          elevation: 10,
-          borderRadius: 100,
-          backgroundColor: recording ? "#13F932" : "#fff",
-        }}
+        style={styles.mic}
       >
         <Image
           source={require("../assets/mic.png")}
           style={{ width: 50, height: 50 }}
         />
       </TouchableOpacity>
-      <View
-        style={{
-          width: "50%",
-          flexDirection: "row",
-          justifyContent: "space-evenly",
-          marginTop: 20,
-        }}
-      >
+      <View style={styles.playPauseView}>
         <Button title="Play" onPress={playSound} />
         <Button title="Pause" onPress={pauseSound} />
       </View>
@@ -117,8 +105,17 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     marginVertical: 100,
-    // justifyContent: "center",
-    // backgroundColor: "#ecf0f1",
-    // padding: 10,
+  },
+  mic: {
+    padding: 40,
+    elevation: 10,
+    borderRadius: 100,
+    backgroundColor: recording ? "#13F932" : "#fff",
+  },
+  playPauseView: {
+    width: "50%",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    marginTop: 20,
   },
 });
