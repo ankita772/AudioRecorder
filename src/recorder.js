@@ -83,7 +83,10 @@ const Recorder = () => {
     <View style={styles.container}>
       <TouchableOpacity
         onPress={recording ? stopRecording : startRecording}
-        style={styles.mic}
+        style={[
+          styles.mic,
+          { backgroundColor: recording ? "#13F932" : "#fff" },
+        ]}
       >
         <Image
           source={require("../assets/mic.png")}
@@ -110,7 +113,6 @@ const styles = StyleSheet.create({
     padding: 40,
     elevation: 10,
     borderRadius: 100,
-    backgroundColor: recording ? "#13F932" : "#fff",
   },
   playPauseView: {
     width: "50%",
